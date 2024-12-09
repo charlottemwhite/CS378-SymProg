@@ -52,8 +52,8 @@
   (loc      ->  (in (city))             (restrict 'city $2))
   (loc      ->  (in (county))           (restrict 'county $2))
   (loc      ->  (in the ? (area))       (restrict 'area $3))
-  (loc      ->  (on (street) in ? (loc)?)           (restrict 'street $2))
-  (loc      ->  (on (streetb) in ? (loc)?)          (restrict 'street $2)) ; handle el-camino
+  (loc      ->  (on (street) in ? (city)?)           (restrict 'street $2))
+  (loc      ->  (on (streetb) in ? (city)?)          (restrict 'street $2)) ; handle el-camino
 
   ;; command
   (s -> ((command) (a/an)? some ? (qual)? (resttype)? (restword) (qualb)? (loc)?)
