@@ -22,4 +22,4 @@
 ; test gramm
 (gramcom grammar) 
 
-(ask '(where can i get american food in palo-alto)) 
+(ask '(how many chinese restaurants are there in the napa-valley)) 

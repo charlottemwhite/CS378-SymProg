@@ -18,6 +18,7 @@
    (get      (get find obtain eat))
    (quality  ((good 2.5) ))
    (some     (some any))
+   (there    (there))
    (restword (restaurant (restaurants restaurant) restaurants place places))
    
 ; the following commented out: smalllex.clj
@@ -83,7 +84,7 @@
 
 
   ;; how many
-  (s -> (how many (qual)? (resttype)? food ? (restword) are ? (loc)?)
+  (s -> (how many (qual)? (resttype)? food ? (restword) are (there)? (loc)?)
     (do (retrieve 'restaurant) (postpr '(length (quote $$)))) )
 ; (retrieve 'streetno) (retrieve 'street) (retrieve 'rating)
 
