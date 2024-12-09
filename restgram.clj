@@ -46,7 +46,8 @@
 
   (loc      ->  (in (city))      (restrict 'city $2))
   (loc      ->  (in (county))    (restrict 'county $2))
-  (loc      -> (in the (area)) (restrict 'area $3))
+  (loc      ->  (in the (area))  (restrict 'area $3))
+  (loc      ->  (on (street))    (restrict 'street $2))
 
   (s -> ((command) (a/an)? (qual)? (resttype)? (restword) (qualb)? (loc)?)
         (retrieve 'restaurant) )
