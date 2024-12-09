@@ -74,7 +74,7 @@
   (s -> (where is (a/an)? (qual)? (restword) (loc)? (resttype)? food)
           (retrieve 'restaurant))
 
-  (s -> (what are (qualb)? (restword) (resttype)? (loc)?)
+  (s -> ((command) (qualb)? (restword) (resttype)? (loc)?)
           (retrieve 'restaurant))
 ))
 
