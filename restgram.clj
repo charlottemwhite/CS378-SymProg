@@ -23,6 +23,7 @@
     (restword (restaurant (restaurants restaurant)
               place places
       ))
+    (streetb (el-camino-real (el-camino el-camino-real)))
 
 ; the following commented out: smalllex.clj
 ;   (kindfood   (american bakery chinese ice-cream))
@@ -40,15 +41,18 @@
 '((command  ->  (show me) true)
   (command  ->  (tell me) true)
   (command  ->  (what is) true)
+  (command  ->  (give me) true)
   
   (qual     ->  ((quality))      (restrictb '>= 'rating $1))
   (qualb    ->  (rated above (number))   (restrictb '>= 'rating $3))
 
   (resttype ->  ((kindfood))     (restrict 'foodtype $1))
 
-  (loc      ->  (in (city))      (restrict 'city $2))
-  (loc      ->  (in (county))    (restrict 'county $2))
-  (loc      ->  (in the ? (area))      (restrict 'area $3))
+  (loc      ->  (in (city))             (restrict 'city $2))
+  (loc      ->  (in (county))           (restrict 'county $2))
+  (loc      ->  (in the ? (area))       (restrict 'area $3))
+  (loc      ->  (on (street))           (restrict 'street $2))
+  (loc      ->  (on (streetb))          (restrict 'street $2)) ; handle el-camino
 
   ;; command
   (s -> ((command) (a/an)? some ? (qual)? (resttype)? (restword) (qualb)? (loc)?)
