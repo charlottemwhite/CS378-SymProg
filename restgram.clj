@@ -61,6 +61,9 @@
 
   (s -> (show me (a/an)? (qual)? (restword) (loc)? (resttype)? food)
           (retrieve 'restaurant))
+
+  (s -> (where is (a/an)? (qual)? (restword) (loc)? (resttype)? food)
+          (retrieve 'restaurant))
 ))
 
 ; thirty is defined in restqueries.clj
