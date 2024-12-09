@@ -56,6 +56,9 @@
     (do (retrieve 'restaurant) (postpr '(length (quote $$)))) )
 ; (retrieve 'streetno) (retrieve 'street) (retrieve 'rating)
 
+  (s -> (how many places (resttype)? are there (loc)?)
+          (do (retrieve 'restaurant) (postpr '(length (quote $$)))))
+
   (s -> (where is (a/an)? (qual)? (resttype)? (restword)? (loc)?)
       (retrieve 'restaurant))
 
