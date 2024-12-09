@@ -17,7 +17,7 @@
    (i/you    (i you one))
    (get      (get find obtain))
    (quality  ((good 2.5) ))
-   (restword (restaurant (restaurants restaurant)))
+   (restword (restaurant (restaurants restaurant) place))
 ; the following commented out: smalllex.clj
 ;   (kindfood   (american bakery chinese ice-cream))
 ;   (city       (palo-alto berkeley san-francisco))
@@ -54,6 +54,9 @@
   (s -> (how many (qual)? (resttype)? food ? (restword) are ? (loc)?)
     (do (retrieve 'restaurant) (postpr '(length (quote $$)))) )
 ; (retrieve 'streetno) (retrieve 'street) (retrieve 'rating)
+
+  (s -> (where is (a/an)? (qual)? (resttype)? (restword)? (loc)?)
+      (retrieve 'restaurant))
 ))
 
 ; thirty is defined in restqueries.clj
