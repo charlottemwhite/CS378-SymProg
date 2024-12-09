@@ -59,7 +59,7 @@
         (retrieve 'restaurant))
 
   ;; how many
-  (s -> (how many (qual)? (resttype)? food ? (restword) are ? (loc)?)
+  (s -> (how many (qual)? (resttype)? food ? (restword) are ? there ? (loc)?)
     (do (retrieve 'restaurant) (postpr '(length (quote $$)))) )
 
 ))
