@@ -34,7 +34,7 @@
 '((command  ->  (show me) true)
   (command  ->  (tell me) true)
   (command  ->  (what is) true)
-  (command ->   (give me) true)
+  (command  ->  (give me) true)
 
   (qual     ->  ((quality))      (restrictb '>= 'rating $1))
   (qualb    ->  (rated above (number))   (restrictb '>= 'rating $3))
