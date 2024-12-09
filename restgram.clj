@@ -48,7 +48,7 @@
 
   (loc      ->  (in (city))      (restrict 'city $2))
   (loc      ->  (in (county))    (restrict 'county $2))
-  (loc      ->  (in the ? (area))      (restrict 'area $2))
+  (loc      ->  (in the ? (area))      (restrict 'area $3))
 
   ;; command
   (s -> ((command) (a/an)? (qual)? (resttype)? (restword) (qualb)? (loc)?)
