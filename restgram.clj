@@ -18,6 +18,7 @@
    (get      (get find obtain eat))
    (quality  ((good 2.5) ))
    (restword (restaurant (restaurants restaurant) place places))
+   
 ; the following commented out: smalllex.clj
 ;   (kindfood   (american bakery chinese ice-cream))
 ;   (city       (palo-alto berkeley san-francisco))
@@ -49,35 +50,41 @@
   (loc      ->  (in the (area))  (restrict 'area $3))
   (loc      ->  (on (street))    (restrict 'street $2))
 
-  (s -> ((command) (a/an)? (qual)? (resttype)? (restword) (qualb)? (loc)?)
-        (retrieve 'restaurant) )
-; (retrieve 'streetno) (retrieve 'street) (retrieve 'rating)
 
+  ;; starts with command
+  (s -> ((command) (a/an)? (qual)? (resttype)? (restword) (qualb)? (loc)?)
+        (retrieve 'restaurant))
+
+  (s -> ((command) (qualb)? (restword) (resttype)? (loc)?)
+        (retrieve 'restaurant))
+
+  (s -> ((command) (a/an)? (qual)? (restword) (loc)? (resttype)? food)
+        (retrieve 'restaurant))
+
+
+  ;; where
   (s -> (where can (i/you) (get) (qual)? (resttype)? food ? (loc)?)
         (retrieve 'restaurant))
 
   (s -> (where can (i/you) (get) (qualb)? (resttype)? food ? (loc)?)
-      (retrieve 'restaurant))
+        (retrieve 'restaurant))
 
+  (s -> (where is (a/an)? (qual)? (resttype)? (restword)? (loc)?)
+        (retrieve 'restaurant))
+
+  (s -> (where is (a/an)? (qual)? (restword) (loc)? (resttype)? food)
+         (retrieve 'restaurant))
+
+
+  ;; how many
   (s -> (how many (qual)? (resttype)? food ? (restword) are ? (loc)?)
     (do (retrieve 'restaurant) (postpr '(length (quote $$)))) )
 ; (retrieve 'streetno) (retrieve 'street) (retrieve 'rating)
 
   (s -> (how many places (resttype)? are there (loc)?)
           (do (retrieve 'restaurant) (postpr '(length (quote $$)))))
-
-  (s -> (where is (a/an)? (qual)? (resttype)? (restword)? (loc)?)
-      (retrieve 'restaurant))
-
-  (s -> ((command) (a/an)? (qual)? (restword) (loc)? (resttype)? food)
-          (retrieve 'restaurant))
-
-  (s -> (where is (a/an)? (qual)? (restword) (loc)? (resttype)? food)
-          (retrieve 'restaurant))
-
-  (s -> ((command) (qualb)? (restword) (resttype)? (loc)?)
-          (retrieve 'restaurant))
 ))
+
 
 ; thirty is defined in restqueries.clj
 (defn testall []
