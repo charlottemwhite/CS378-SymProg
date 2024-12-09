@@ -14,7 +14,7 @@
 
 (deflexicon
  '((a/an     (a an some))
-   (i/you    (i you one))
+   (i/you    (i you one we someone))
    (get      (get find obtain eat))
    (quality  ((good 2.5) ))
    (restword (restaurant (restaurants restaurant) place places))
