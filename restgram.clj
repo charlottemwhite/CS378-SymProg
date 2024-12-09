@@ -40,6 +40,7 @@
   (qualb    ->  (rated above (number))   (restrictb '>= 'rating $3))
   
   (resttype ->  ((kindfood))     (restrict 'foodtype $1))
+  (resttype ->  (for (kindfood)) (restrict 'foodtype $2))
 
   (loc      ->  (in (city))      (restrict 'city $2))
   (loc      ->  (in (county))    (restrict 'county $2))
@@ -57,6 +58,9 @@
 
   (s -> (where is (a/an)? (qual)? (resttype)? (restword)? (loc)?)
       (retrieve 'restaurant))
+
+  (s -> (show me (a/an)? (qual)? (restword) (loc)? (resttype)? food)
+          (retrieve 'restaurant))
 ))
 
 ; thirty is defined in restqueries.clj
