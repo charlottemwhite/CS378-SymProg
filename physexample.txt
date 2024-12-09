@@ -1,0 +1,49 @@
+; Example queries and results for Physics
+
+user=> (load-file "cs378/physics.clj")
+#'user/load-files
+user=> (load-files)
+#'user/physb
+user=> (load-file "cs378/physgramsol.clj")
+#'user/physb
+user=> (gramcom grammar)
+nil
+
+user=> (phys '(what is the area of a circle with radius = 2))
+(calculate area (object circle (radius 2)))
+12.566370614
+
+user=> (phys '(what is the area of a circle with radius = 24 inches))
+(calculate area (object circle (radius 0.6095999999999999)))
+1.1674540318072664
+
+user=> (phys '(what is the radius of a sphere with volume = 50))
+(calculate radius (object sphere (volume 50)))
+2.2853907486921896
+
+user=> (phys '(what is the height of a fall with time = 4))
+(calculate height (object fall (time 4)))
+78.4532
+
+user=> (phys '(what is the area in square-inches of a circle with
+               radius = 3 inches))
+
+(calculate (* area 6.4516E-4) (object circle (radius 0.07619999999999999)))
+28.274333881499995
+
+user=> (phys '(how does the area of a circle vary with radius))
+(varywith circle area radius)
+square
+
+user=> (phys '(how does the force of gravitation vary with radius))
+(varywith gravitation force radius)
+inverse-square
+
+user=> (phys '(how does the area of a circle vary if radius is doubled))
+(varychg circle area ((radius 2.0)))
+4.0
+
+user=> (phys '(how does the area of a circle vary if radius is
+               1.5 times its previous value))
+(varychg circle area ((radius 1.5)))
+2.25

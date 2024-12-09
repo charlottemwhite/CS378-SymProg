@@ -1,0 +1,1 @@
+xpra start :100 --start-child=xterm --start-via-proxy=no --opengl=yes

@@ -1,0 +1,102 @@
+Clojure 1.10.0
+user=> (load-file "cs378/restaurant.clj")
+#'user/load-files
+user=> (load-files)
+#'user/dbdata
+user=> (load-file "cs378/restqueries.clj")
+#'user/restqueries
+user=> (load-file "cs378/restgramsol.clj")
+#'user/gr
+user=> (gramcom grammar)
+nil
+user=> (testall)
+
+(show me a good italian restaurant in palo-alto)
+((babbos 717 stanford-shopping-ctr) (cafe-pro-bono 2437 birch-st) (cenzos 233 university-ave) (florentine-italian-foods 560 waverley-st) (formicos-italian-rest 2115 saint-francis-dr) (il-fornaio 520 cowper-st) (il-fornaio-bakery 388 university-ave) (osteria 247 hamilton-ave) (palermo-rotisserie 452 university-ave) (mikes-cafe-etc. 2680 middlefield-rd) (vicolo 473 university) (cafe-brioche 445 california-ave) (bravo-fono 0 unknown) (beppo 643 emerson-st) (nouveau-trattoria 541 bryant-st) (spalti 417 california-ave))
+
+(give me the best restaurant in sunnyvale for american food)
+(country-gourmet-& 3.0 1314 s-mary-ave)
+
+(where is a good place in alameda for arabic food)
+()
+
+(where can i eat some good italian food in the napa-valley)
+((boskos-ristorante 1364 lincoln-ave) (wappo-bar-&-bistro 1226 washington-st-ste-b) (villa-romano-restaurant 1011 soscol-rd) (piatti-restaurant-co 6480 washington-st) (tra-vigne 1050 charter-oak-ave))
+
+(what are some good places for pizza in alameda)
+((la-vals 891 island-dr) (new-york-pizza 1419 park-st))
+
+(give me the best french restaurant in the napa-valley)
+(domaine-chandon 4.0 0 california-drive)
+
+(how many places for ice-cream are there in fremont)
+15
+
+(where can we find some restaurants on el-camino-real in palo-alto)
+((sundance-mine-company 1921 el-camino-real) (island-food-&-grog-the 0 el-camino-real) (hobees 4224 el-camino-real) (palo-alto-coffee-roasting-co 4119 el-camino-real) (the-knot-hole-cafe 4329 el-camino-real) (china-lion 3345 el-camino-real) (fresh-taste-mandarin-kitchen 2111 el-camino-real) (mr-chaus-chinese-fast-food 3781 el-camino-real) (peking-duck-restaurant 2310 el-camino-real) (compadres-mexican-bar-&-grill 3877 el-camino-real) (joses-pizza 2275 el-camino-real) (pizza-chicago 4115 el-camino-real) (pizza-hut 2999 el-camino-real) (uncle-chen 2209 el-camino-real) (fish-market 3150 el-camino-real) (ocean-seafood 3295 el-camino-real) (fuki-sushi 4119 el-camino-real) (thai-city-restaurant 3691 el-camino-real) (thai-garden-restaurant 0 el-camino-real))
+
+(where is a good place on soquel-dr in aptos for french food)
+((chez-renee 9051 soquel-dr))
+
+(how many chinese restaurants are there in the napa-valley)
+16
+
+(how many buttercup-kitchen are there in contra-costa-county)
+1
+
+(how many french restaurant are there in the napa-valley)
+4
+
+(give me some restaurants good for italian food in mountain-view)
+((florentine-restaurant 118 castro-st))
+
+(how many italian restaurants are there in the napa-valley)
+10
+
+(where is a good place on buchanan in san-francisco for japanese food)
+((iroha-restaurant 1728 buchanan) (sushi-a-restaurant 1737 buchanan))
+
+(where is a bakery on shattuck-ave in berkeley)
+((hello-croissant 1983 shattuck-ave))
+
+(give me the best restaurant in palo-alto for chinese food)
+(fresh-taste-mandarin-kitchen 3.5 2111 el-camino-real)
+
+(where is a good place in the napa-valley for chinese food)
+((soo-yuan-restaurant 1144 jordan-ln))
+
+(where can i eat some good arabic food in the bay-area)
+((spoons-restaurant 3340 mowry-ave) (the-grapeleaf-restaurant 4031 balboa) (sunrise-deli 2115 irving-st))
+
+(give me some good places for ice-cream in alameda)
+((alameda-ice-cream-dock 871 island-dr-no-c) (baskin-robbins 2635 blanding-ave) (tuckers-super-creamed-ice-cream 1528 park-st))
+
+(how many italian restaurants are there in san-francisco)
+142
+
+(give me a restaurant in aptos that serves good french food)
+((chez-renee 9051 soquel-dr))
+
+(what are some good restaurants in mountain-view)
+((blue-sky-cafe 336 bryant-st.) (chef-wang 212 castro-st) (tied-house-cafe-&-brewery 0 unknown) (austins 1616 west-el-camino-real) (hobees 2312 central-expy) (kens-house-of-pancakes 89 w-el-camino-real) (georges-koffee-kup 2483 old-middlefield-way) (jumpin-java-coffee-house 744 w-dana-st) (tao-tao-cafe 1351 ormonde-way) (blue-sky-cafe 336 bryant-st.) (larbrea-de-la-vie 1760 miramonte-ave) (catering-by-dana 2540 california-st) (pollo 1040 grant-rd) (beijing-house-restaurant 779 e-evelyn-ave-no-b) (golden-wok-restaurant 895 villa-st) (hangen-szechuan-restaurant 134 castro-st) (hong-kee-chinese-restaurant 600 w-el-camino-real) (hunan-gourmet 102 castro-st) (sun-sun-chinese-food 867 e-el-camino-real) (szechuan-garden-restaurant 124 castro-st) (tien-fu 174 castro-st) (treasure-pot-chinese-restaurant 2650 w-el-camino-real) (china-wok 2633 california) (tong-kee-noodles 0 st) (shan-shui-chinese-restaurant 210 hope-st) (mei-long 867 e-el-camino) (dittmers-wursthouse 400 san-antonio-rd) (plantation-deli-cafe 809 cuesta-dr-no-a) (togos 1911 w-el-camino-real) (jew-and-the-gentile-deli 570 n-shoreline-bv) (magic-edge-officers-club 1625 shoreline-blvd.) (castro-st-bar-&-grill 174 castro-st) (double-rainbow 135 castro-st) (amber-india-restaurant 0 camino-real) (mumtaj-indian-cusine 126 castro-st) (sues-indian-cuisine 216 castro-st.) (swagat-indian-cuisine 2700 west-el-camino-real) (taj-mahal-indian-cuisine 185 castro-st) (passage-to-india 1100 w-el-camino-real) (india-palace 236 castro-st.) (florentine-restaurant 118 castro-st) (fumi-yoshi 1991 w-el-camino-real) (shogun-restaurant 841 villa-st) (yakko-restaurant 975 w-dana-st) (subaru-restaurant nil nil) (bueno-bueno 2500 w-el-camino-real-no-b) (bueno-bueno 1477 plymouth-st) (chapala-mexican-restaurant 166 oak-st) (el-paso-cafe 1407 w-el-camino-real) (estrellita 971 san-antonio-rd) (fiesta-del-mar 1005 n-shoreline-blvd.) (la-costena 2078 old-middlefield-rd) (roohs-cafe 650 castro-st.) (taqueria-labamba 2058 old-middlefield-way) (la-fiesta 240 villa-st) (tres-hermanos 327 moffett-blvd) (fiesta-del-mar 0 unknown) (fiesta-del-mar-too 735 villa-st) (pollos nil nil) (rose-international-market 1060 castro-st) (applewood-pizza 903 e-el-camino-real) (family-pizza-place 2464 w-el-camino-real) (fast-pizza-delivery 1482 w-el-camino-real) (frankie-johnnie-&-luigi-too 939 w-el-camino-real) (mountain-mikes-pizza 2000 w-el-camino-real) (pontillos-pizzeria 615 s-rengstorff-ave) (stuft-pizza 191 castro-st) (tony-&-albas-pizza 619 escuela-ave) (marios-pizza-&-restaurant 861 leong-dr.) (st-james-infirmary 390 moffett-blvd) (toss-it-fresh 0 antonio-road-and-california-st) (fresh-choice 2250 w-el-camino-real) (lakeside-cafe 3160 n.shoreline-blvd.) (lakeside-cafe 3160 n.shoreline-blvd.) (fu-lum-mum-seafood-restaurant 246 castro-st) (fiesta-del-mar 1005 n-shoreline-blvd) (masas-sushi-&-sandwiches 400 san-antonio-rd) (yakko-restaurant 975 w-dana-st) (amarin-thai-cuisine 156 castro-st.) (garden-fresh 1245 w-el-camino-real) (pho-to-chou 0 st) (pho-xe-lua 311 moffett-blvd))
+
+(where are some restaurants good for cajun food in the napa-valley)
+((tom-foolery-saloon 600 trancas-st))
+
+(where can i eat some good french food in mountain-view)
+()
+
+(give me some good arabic restaurants in mountain-view)
+()
+
+(give me a restaurant on el-camino in palo-alto)
+((sundance-mine-company 1921 el-camino-real) (island-food-&-grog-the 0 el-camino-real) (hobees 4224 el-camino-real) (palo-alto-coffee-roasting-co 4119 el-camino-real) (the-knot-hole-cafe 4329 el-camino-real) (china-lion 3345 el-camino-real) (fresh-taste-mandarin-kitchen 2111 el-camino-real) (mr-chaus-chinese-fast-food 3781 el-camino-real) (peking-duck-restaurant 2310 el-camino-real) (compadres-mexican-bar-&-grill 3877 el-camino-real) (joses-pizza 2275 el-camino-real) (pizza-chicago 4115 el-camino-real) (pizza-hut 2999 el-camino-real) (uncle-chen 2209 el-camino-real) (fish-market 3150 el-camino-real) (ocean-seafood 3295 el-camino-real) (fuki-sushi 4119 el-camino-real) (thai-city-restaurant 3691 el-camino-real) (thai-garden-restaurant 0 el-camino-real))
+
+(where is a chinese restaurant on el-camino in palo-alto)
+((china-lion 3345 el-camino-real) (fresh-taste-mandarin-kitchen 2111 el-camino-real) (mr-chaus-chinese-fast-food 3781 el-camino-real) (peking-duck-restaurant 2310 el-camino-real))
+
+(where is a restaurant in san-francisco that serves good chinese food)
+((brandy-hos-hunan-food 217 columbus-avenue) (brandy-hos-on-broadway 450 broadway) (china-court-restaurant 599 castro) (china-moon 639 post-rd) (choke-your-chicken 183 bay-st) (chu-lin-restaurant 2428 clement) (fountain-court-restaurant 354 clement) (has-restaurant 2335 irving) (has-restaurant 2360 van-ness-avenue) (harbor-village-restaurant 4 embarcadero-center) (henry-chungs-original-hunan-restaurant 924 sansome) (henry-chungs-original-hunan-restaurant 1016 bryant) (henry-chungs-original-hunan-restaurant 674 sacramento) (hing-lung-restaurant 674 broadway) (hong-kong-seafood-restaurant-noriega 2578 noriega) (house-of-nan-king 919 kearny) (kams-restaurant 3620 balboa-st) (lichee-garden-restaurant 1416 powell) (new-asia 772 pacific-avenue) (the-mandarin-restaurant 0 square) (tommy-toys-haute-cuisine-chinoise 655 montgomery) (tonga-room 0 the-fairmont) (wing-lee-restaurant 1810 polk) (wu-kong-restaurant 101 spear) (yank-sing-restaurants 427 battery) (yank-sing-restaurants 49 stevenson) (yet-wah-restaurant 2140 clement) (yet-wah-restaurant 0 39) (yuet-lee-seafood-restaurant-inc 1300 stockton) (yuet-lee-seafood-restaurant-inc 3601 x26th) (chef-jias-restaurant 925 kearny-st) (cheung-hing-chinese-restaurant 2339 norlega) (dragon-house-restaurant 5344 geary-blvd) (dragon-river-restaurant 5045 geary-blvd) (gold-mountain-restaurant 644 broadway) (hunan-homes-restaurant 622 jackson-st) (new-kans-chinese-restaurant 708 grant-ave) (kirin-chinese-restaurant 6135 geary-blvd) (new-ocean-seafood-chinese-restaurant 3727 geary-blvd) (north-china-restaurant 2315 van-ness-ave) (sams-chinese-restaurant 1718 polk-st) (shandy-chinese-fast-food 211 kearny-st) (szechuan-taste-restaurant 917 taraval-st) (yan-yan-restaurant 2241 judah-st) (r-&-g-lounge-&-restaurant 631 kearney) (eos-restaurant/wine-bar 901 cole-st) (hong-kong-flower-lounge 5322 geary-st) (golden-pot-restaurant 1888 clement) (happy-palace 696 monterey-blvd) (red-crane 1115 clement) (crustaceans nil nil) (jumbo-seafood-restaurant 0 unknown) (mings-diner 2129 taraval-st.) (pacific-regent 835 pacific-avenue) (just-wonton 1241 vicente-st))
+
+(give me some good places for pizza on el-camino in palo-alto)
+((joses-pizza 2275 el-camino-real) (pizza-chicago 4115 el-camino-real) (pizza-hut 2999 el-camino-real))

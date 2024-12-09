@@ -1,0 +1,1 @@
+(set-variable 'inferior-lisp-program "clojure")
