@@ -17,6 +17,9 @@
 (or (function? ask) (defn ask [sent] nil) )
 (load-files-two)
 
+
+
+; test gramm
 (gramcom grammar) 
 
 (ask '(where can i get american food in palo-alto)) 
