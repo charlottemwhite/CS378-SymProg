@@ -21,7 +21,7 @@
               (good 2.5) 
       ))
     (restword (restaurant (restaurants restaurant)
-              (place (places place))
+              place places
       ))
 
 ; the following commented out: smalllex.clj
@@ -51,7 +51,7 @@
   (loc      ->  (in the ? (area))      (restrict 'area $3))
 
   ;; command
-  (s -> ((command) (a/an)? (qual)? (resttype)? (restword) (qualb)? (loc)?)
+  (s -> ((command) (a/an)? some ? (qual)? (resttype)? (restword) (qualb)? (loc)?)
         (retrieve 'restaurant) )
 
   ;; where
