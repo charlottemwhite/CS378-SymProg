@@ -15,7 +15,7 @@
 (deflexicon
  '((a/an     (a an some))
    (i/you    (i you one))
-   (get      (get find obtain))
+   (get      (get find obtain eat))
    (quality  ((good 2.5) ))
    (restword (restaurant (restaurants restaurant) place))
 ; the following commented out: smalllex.clj
@@ -37,6 +37,7 @@
   (command  ->  (give me) true)
 
   (qual     ->  ((quality))      (restrictb '>= 'rating $1))
+  (qualb    ->  (some (quality)) (restrictb '>= 'rating $2))
   (qualb    ->  (rated above (number))   (restrictb '>= 'rating $3))
   
   (resttype ->  ((kindfood))     (restrict 'foodtype $1))
@@ -44,6 +45,7 @@
 
   (loc      ->  (in (city))      (restrict 'city $2))
   (loc      ->  (in (county))    (restrict 'county $2))
+  (loc      -> (in the (area)) (restrict 'area $3))
 
   (s -> ((command) (a/an)? (qual)? (resttype)? (restword) (qualb)? (loc)?)
         (retrieve 'restaurant) )
@@ -51,6 +53,9 @@
 
   (s -> (where can (i/you) (get) (qual)? (resttype)? food ? (loc)?)
         (retrieve 'restaurant))
+
+  (s -> (where can (i/you) (get) (qualb)? (resttype)? food ? (loc)?)
+      (retrieve 'restaurant))
 
   (s -> (how many (qual)? (resttype)? food ? (restword) are ? (loc)?)
     (do (retrieve 'restaurant) (postpr '(length (quote $$)))) )
