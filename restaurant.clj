@@ -8,6 +8,7 @@
 
 (def thirty nil)       ; to prevent Clojure error
 (or (function? ask) (defn ask [sent] nil) )  ; stub
+; (defn ask [sent] nil)
 
 (defn load-files []
 (load-file "cs378/cs378.clj")
