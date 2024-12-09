@@ -56,8 +56,8 @@
   (loc      ->  (on (streetb) in ? (city)?)          (restrict 'street $2)) ; handle el-camino
 
   ;; command
-  (s -> ((command) (a/an)? some ? (qual)? (resttype)? (restword) (resttype)?
-        (qualb)? (loc)?)
+  (s -> ((command) (a/an)? some ? (qual)? (resttype)? (restword) (qual)? (resttype)?
+        food ? (qualb)? (loc)?)
         (retrieve 'restaurant) )
 
   ;; where
