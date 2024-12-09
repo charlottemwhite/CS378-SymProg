@@ -14,9 +14,10 @@
 
 (deflexicon
  '(
-    (a/an     (a an some))
-    (i/you    (i you one we))
-    (get      (get find obtain give))
+    (a/an       (a an some))
+    (i/you      (i you one we))
+    (direct-obj (me us))
+    (get        (get find obtain give))
     (quality  (
               (good 2.5) 
       ))
@@ -38,10 +39,10 @@
 
 (def grammar
 
-'((command  ->  (show me) true)
-  (command  ->  (tell me) true)
+'((command  ->  (show (direct-obj)) true)
+  (command  ->  (tell (direct-obj)) true)
   (command  ->  (what is) true)
-  (command  ->  (give me) true)
+  (command  ->  (give (direct-obj)) true)
   
   (qual     ->  ((quality))      (restrictb '>= 'rating $1))
   (qualb    ->  (rated above (number))   (restrictb '>= 'rating $3))
@@ -51,8 +52,8 @@
   (loc      ->  (in (city))             (restrict 'city $2))
   (loc      ->  (in (county))           (restrict 'county $2))
   (loc      ->  (in the ? (area))       (restrict 'area $3))
-  (loc      ->  (on (street))           (restrict 'street $2))
-  (loc      ->  (on (streetb))          (restrict 'street $2)) ; handle el-camino
+  (loc      ->  (on (street) in ? (loc)?)           (restrict 'street $2))
+  (loc      ->  (on (streetb) in ? (loc)?)          (restrict 'street $2)) ; handle el-camino
 
   ;; command
   (s -> ((command) (a/an)? some ? (qual)? (resttype)? (restword) (qualb)? (loc)?)
