@@ -17,7 +17,8 @@
    (i/you    (i you one we someone))
    (get      (get find obtain eat))
    (quality  ((good 2.5) ))
-   (restword (restaurant (restaurants restaurant) place places))
+   (some     (some any))
+   (restword (restaurant (restaurants restaurant) restaurants place places))
    
 ; the following commented out: smalllex.clj
 ;   (kindfood   (american bakery chinese ice-cream))
@@ -48,7 +49,9 @@
   (loc      ->  (in (city))      (restrict 'city $2))
   (loc      ->  (in (county))    (restrict 'county $2))
   (loc      ->  (in the (area))  (restrict 'area $3))
+  (loc      ->  (in (area))      (restrict 'area $2))
   (loc      ->  (on (street))    (restrict 'street $2))
+  (loc      ->  (on (street) in (city))    (restrict 'street $2))
 
 
   ;; starts with command
@@ -63,7 +66,7 @@
 
 
   ;; where
-  (s -> (where can (i/you) (get) (qual)? (resttype)? food ? (loc)?)
+  (s -> (where can (i/you) (get) (some)? (qual)? (resttype)? food ? (loc)?)
         (retrieve 'restaurant))
 
   (s -> (where can (i/you) (get) (qualb)? (resttype)? food ? (loc)?)
@@ -72,8 +75,11 @@
   (s -> (where is (a/an)? (qual)? (resttype)? (restword)? (loc)?)
         (retrieve 'restaurant))
 
-  (s -> (where is (a/an)? (qual)? (restword) (loc)? (resttype)? food)
+  (s -> (where is (a/an)? (qual)? (restword) (loc)? (loc)? (resttype)? food)
          (retrieve 'restaurant))
+
+  ;; (s -> (where can (i/you) (get) (qual)? (some)? (restword)? (loc)?)
+  ;;       (retrieve 'restaurant))
 
 
   ;; how many
