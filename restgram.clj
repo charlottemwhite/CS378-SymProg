@@ -34,16 +34,23 @@
 '((command  ->  (show me) true)
   (command  ->  (tell me) true)
   (command  ->  (what is) true)
+  (command ->  (give me) true)
+
   (qual     ->  ((quality))      (restrictb '>= 'rating $1))
   (qualb    ->  (rated above (number))   (restrictb '>= 'rating $3))
+  
   (resttype ->  ((kindfood))     (restrict 'foodtype $1))
+
   (loc      ->  (in (city))      (restrict 'city $2))
   (loc      ->  (in (county))    (restrict 'county $2))
+
   (s -> ((command) (a/an)? (qual)? (resttype)? (restword) (qualb)? (loc)?)
         (retrieve 'restaurant) )
 ; (retrieve 'streetno) (retrieve 'street) (retrieve 'rating)
+
   (s -> (where can (i/you) (get) (qual)? (resttype)? food ? (loc)?)
         (retrieve 'restaurant))
+
   (s -> (how many (qual)? (resttype)? food ? (restword) are ? (loc)?)
     (do (retrieve 'restaurant) (postpr '(length (quote $$)))) )
 ; (retrieve 'streetno) (retrieve 'street) (retrieve 'rating)
