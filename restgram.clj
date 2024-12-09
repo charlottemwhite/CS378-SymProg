@@ -17,7 +17,7 @@
    (i/you    (i you one))
    (get      (get find obtain eat))
    (quality  ((good 2.5) ))
-   (restword (restaurant (restaurants restaurant) place))
+   (restword (restaurant (restaurants restaurant) place places))
 ; the following commented out: smalllex.clj
 ;   (kindfood   (american bakery chinese ice-cream))
 ;   (city       (palo-alto berkeley san-francisco))
@@ -35,6 +35,7 @@
   (command  ->  (tell me) true)
   (command  ->  (what is) true)
   (command  ->  (give me) true)
+  (command  ->  (what are) true)
 
   (qual     ->  ((quality))      (restrictb '>= 'rating $1))
   (qualb    ->  (some (quality)) (restrictb '>= 'rating $2))
@@ -71,6 +72,9 @@
           (retrieve 'restaurant))
 
   (s -> (where is (a/an)? (qual)? (restword) (loc)? (resttype)? food)
+          (retrieve 'restaurant))
+
+  (s -> (what are (qualb)? (restword) (resttype)? (loc)?)
           (retrieve 'restaurant))
 ))
 
