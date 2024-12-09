@@ -59,7 +59,7 @@
   (s -> (where is (a/an)? (qual)? (resttype)? (restword)? (loc)?)
       (retrieve 'restaurant))
 
-  (s -> (show me (a/an)? (qual)? (restword) (loc)? (resttype)? food)
+  (s -> ((command) (a/an)? (qual)? (restword) (loc)? (resttype)? food)
           (retrieve 'restaurant))
 
   (s -> (where is (a/an)? (qual)? (restword) (loc)? (resttype)? food)
