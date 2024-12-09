@@ -22,4 +22,4 @@
 ; test gramm
 (gramcom grammar) 
 
-(ask '(how many chinese restaurants are there in the napa-valley)) 
+(ask '(how many italian restaurants are there in the napa-valley)) 
