@@ -12,6 +12,9 @@
 
 ; The lexicon restlex.lsp defines: restaurant kindfood city county area street
 
+;; Charlotte White, cmw4856
+;; https://github.com/charlottemwhite/CS378-SymProg
+
 (deflexicon
  '(
     (a/an       (a an some))
