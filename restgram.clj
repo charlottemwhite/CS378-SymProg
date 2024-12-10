@@ -22,6 +22,7 @@
     (quality  (
               (good 2.5) 
       ))
+    (question-word (what where))
     (restword (restaurant (restaurants restaurant)
               place places restaurants
       ))
@@ -66,7 +67,7 @@
   (s -> (where can (i/you) (get) some ? (qual)? (resttype)? food ? (restword)? (loc)?)
         (retrieve 'restaurant))
 
-  (s -> (where (are/is) (a/an)? some ? (qual)? (resttype)? (restword) (loc)? (qual)? (resttype)?
+  (s -> ((question-word) (are/is) (a/an)? some ? (qual)? (resttype)? (restword) (loc)? (qual)? (resttype)?
         food ? (qualb)? (loc)?)
         (retrieve 'restaurant) )
 
