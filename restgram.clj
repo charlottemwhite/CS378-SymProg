@@ -72,10 +72,17 @@
         (retrieve 'restaurant) )
 
   ;; how many
-  (s -> (how many (qual)? (resttype)? food ? (restword) are ? there ? (loc)?)
+  (s -> (how many (qual)? (resttype)? food ? (restword) (qual)? (resttype)? food ? are ? there ? (loc)?)
     (do (retrieve 'restaurant) (postpr '(length (quote $$)))) )
 
+  ; best test
+  (s -> (what is the best (restword)? (loc)? (resttype)?)
+      (do (retrieve 'restaurant) 
+         (postpr '(first (sort-by (fn [r] (or (get r 'rating) 0)) > (quote $$))))) )
+
+
 ))
+
 
 ; thirty is defined in restqueries.clj
 (defn testall []
