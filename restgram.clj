@@ -61,26 +61,27 @@
   ;; command
   (s -> ((command) (a/an)? some ? (qual)? (resttype)? (restword) (loc)? (qual)? (resttype)? 
         food ? (qualb)? (loc)?)
-        (retrieve 'restaurant) )
+        (do (retrieve 'restaurant) (retrieve 'streetno) (retrieve 'street))
+    )
 
   ;; where
   (s -> (where can (i/you) (get) some ? (qual)? (resttype)? food ? (restword)? (loc)?)
-        (retrieve 'restaurant))
+        (do (retrieve 'restaurant) (retrieve 'streetno) (retrieve 'street))
+    )
 
   (s -> ((question-word) (are/is) (a/an)? some ? (qual)? (resttype)? (restword) (loc)? (qual)? (resttype)?
         food ? (qualb)? (loc)?)
-        (retrieve 'restaurant) )
+        (do (retrieve 'restaurant) (retrieve 'streetno) (retrieve 'street))
+    )
 
   ;; how many
   (s -> (how many (qual)? (resttype)? food ? (restword) (qual)? (resttype)? food ? are ? there ? (loc)?)
     (do (retrieve 'restaurant) (postpr '(length (quote $$)))) )
 
   ; best test
-  (s -> (what is the best (restword)? (loc)? (resttype)?)
-      (do (retrieve 'restaurant) 
+  (s -> (what is the best (restword)? (loc)? (resttype)? food ?)
+      (do (retrieve 'restaurant) (retrieve 'rating)
          (postpr '(first (sort-by (fn [r] (or (get r 'rating) 0)) > (quote $$))))) )
-
-
 ))
 
 
