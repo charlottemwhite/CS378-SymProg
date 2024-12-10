@@ -55,11 +55,11 @@
   (resttype ->  (for ? (kindfood))     (restrict 'foodtype $2))
   (resttype ->  (that serves ? (qual)? (kindfood))     (restrict 'foodtype $4))
 
-  (loc      ->  (in (city))             (restrict 'city $2))
+  (loc      ->  (in (city))             (restrict 'city   $2))
   (loc      ->  (in (county))           (restrict 'county $2))
-  (loc      ->  (in the ? (area))       (restrict 'area $3))
-  (loc      ->  (on (street) in ? (city)?)           (restrict 'street $2))
-  (loc      ->  (on (streetb) in ? (city)?)          (restrict 'street $2)) ; handle el-camino
+  (loc      ->  (in the ? (area))       (restrict 'area   $3))
+  (loc      ->  (on (street)  (loc)?)   (restrict 'street $2))
+  (loc      ->  (on (streetb) (loc)?)   (restrict 'street $2)) ; handle el-camino
 
   ;; command
   (s -> ((command) (a/an)? some ? (qual)? (resttype)? (restword) (loc)? (qual)? (resttype)? 
@@ -81,8 +81,8 @@
   (s -> (how many (qual)? (resttype)? food ? (restword) (qual)? (resttype)? food ? are ? there ? (loc)?)
     (do (retrieve 'restaurant) (postpr '(length (quote $$)))) )
 
-  ; best test
-  (s -> (what is the best (restword)? (loc)? (resttype)? food ?)
+  ; best
+  (s -> ((command) the best (resttype)? (restword)? (loc)? (resttype)? food ?)
       (do 
          (retrieve 'restaurant) 
          (retrieve 'rating) 
