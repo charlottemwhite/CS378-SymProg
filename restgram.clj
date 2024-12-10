@@ -83,8 +83,12 @@
 
   ; best test
   (s -> (what is the best (restword)? (loc)? (resttype)? food ?)
-      (do (retrieve 'restaurant) (retrieve 'rating)
-         (postpr '(first (sort-by (fn [r] (or (get r 'rating) 0)) > (quote $$))))) )
+      (do 
+         (retrieve 'restaurant) 
+         (retrieve 'rating) 
+         (postpr '(first (sort-by second > (quote $$))))
+         ) 
+    )
 ))
 
 
