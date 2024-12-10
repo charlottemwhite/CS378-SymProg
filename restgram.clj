@@ -86,6 +86,8 @@
       (do 
          (retrieve 'restaurant) 
          (retrieve 'rating) 
+         (retrieve 'streetno)
+         (retrieve 'street)
          (postpr '(first (sort-by second > (quote $$))))
          ) 
     )
