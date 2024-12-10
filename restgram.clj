@@ -22,7 +22,7 @@
               (good 2.5) 
       ))
     (restword (restaurant (restaurants restaurant)
-              place places
+              place places restaurants
       ))
     (streetb (el-camino-real (el-camino el-camino-real)))
 
@@ -61,7 +61,7 @@
         (retrieve 'restaurant) )
 
   ;; where
-  (s -> (where can (i/you) (get) some ? (qual)? (resttype)? food ? (loc)?)
+  (s -> (where can (i/you) (get) some ? (qual)? (resttype)? food ? (restword)? (loc)?)
         (retrieve 'restaurant))
 
   ;; how many
