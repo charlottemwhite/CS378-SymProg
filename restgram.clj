@@ -17,7 +17,7 @@
     (a/an       (a an some))
     (i/you      (i you one we))
     (direct-obj (me us))
-    (get        (get find obtain give))
+    (get        (get find obtain give eat))
     (quality  (
               (good 2.5) 
       ))
@@ -61,7 +61,7 @@
         (retrieve 'restaurant) )
 
   ;; where
-  (s -> (where can (i/you) (get) (qual)? (resttype)? food ? (loc)?)
+  (s -> (where can (i/you) (get) some ? (qual)? (resttype)? food ? (loc)?)
         (retrieve 'restaurant))
 
   ;; how many
