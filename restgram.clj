@@ -49,6 +49,7 @@
   (qualb    ->  (rated above (number))   (restrictb '>= 'rating $3))
 
   (resttype ->  (for ? (kindfood))     (restrict 'foodtype $2))
+  (resttype ->  (that serves ? (qual)? (kindfood))     (restrict 'foodtype $4))
 
   (loc      ->  (in (city))             (restrict 'city $2))
   (loc      ->  (in (county))           (restrict 'county $2))
@@ -65,7 +66,7 @@
   (s -> (where can (i/you) (get) some ? (qual)? (resttype)? food ? (restword)? (loc)?)
         (retrieve 'restaurant))
 
-  (s -> (where (are/is) (a/an)? some ? (qual)? (resttype)? (restword) (qual)? (resttype)?
+  (s -> (where (are/is) (a/an)? some ? (qual)? (resttype)? (restword) (loc)? (qual)? (resttype)?
         food ? (qualb)? (loc)?)
         (retrieve 'restaurant) )
 
