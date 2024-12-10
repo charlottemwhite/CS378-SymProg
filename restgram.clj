@@ -16,6 +16,7 @@
  '(
     (a/an       (a an some))
     (i/you      (i you one we))
+    (are/is     (are is))
     (direct-obj (me us))
     (get        (get find obtain give eat))
     (quality  (
@@ -63,6 +64,10 @@
   ;; where
   (s -> (where can (i/you) (get) some ? (qual)? (resttype)? food ? (restword)? (loc)?)
         (retrieve 'restaurant))
+
+  (s -> (where (are/is) (a/an)? some ? (qual)? (resttype)? (restword) (qual)? (resttype)?
+        food ? (qualb)? (loc)?)
+        (retrieve 'restaurant) )
 
   ;; how many
   (s -> (how many (qual)? (resttype)? food ? (restword) are ? there ? (loc)?)
